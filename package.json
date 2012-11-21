@@ -1,0 +1,30 @@
+{
+  "author": {
+    "name": "wiky",
+    "email": "wiky@f2e.cc"
+  },
+  "name": "node.nebula",
+  "description": "",
+  "version": "0.0.26",
+  "main": "./index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "_id": "node.nebula@0.0.25",
+  "_engineSupported": true,
+  "_npmVersion": "1.1.21",
+  "_nodeVersion": "v0.6.18",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "7dd5d72c9c319153571508070b41f12f29ea3480"
+  },
+  "_from": "node.nebula@0.0.22",
+  "_npmUser": {
+    "name": "xunuo",
+    "email": "i@xunuo.com"
+  },
+  "readme": "#Keep going"
+}
