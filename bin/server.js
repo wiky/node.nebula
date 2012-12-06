@@ -28,7 +28,7 @@ var config = {
 	 * 同时在server端备份数据
 	 * @type {Boolean}
 	 */
-	backupData: true,
+	backupData: false,
 	/**
 	 * 等待svn co 代码
 	 * @type {Boolean}
