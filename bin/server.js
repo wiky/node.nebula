@@ -36,6 +36,8 @@ var config = {
 	waitCo: false
 };
 
+this.onRunning = {};
+
 /**
  * 创建服务
  */
