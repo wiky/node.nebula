@@ -28,7 +28,12 @@ var config = {
 	 * 同时在server端备份数据
 	 * @type {Boolean}
 	 */
-	backupData: false
+	backupData: true,
+	/**
+	 * 等待svn co 代码
+	 * @type {Boolean}
+	 */
+	waitCo: false
 };
 
 /**
@@ -39,6 +44,7 @@ http.createServer(function (req, res) {
 		name = query && query.name,
 		url = (query && query.url) || config.url,
 		bak = (query && query.bak) === 'true' || config.backupData;
+		waitCo = (query && query.waitCo) === 'true' || config.waitCo;
 
 	if (name && url) {
 		nodeLog('[info] Start build, URL:' + url);
@@ -46,7 +52,8 @@ http.createServer(function (req, res) {
 			svnURI: url,
 			branchName: name,
 			svnDir: config.svnDir + util.urlToDir(url),
-			backupData: bak
+			backupData: bak,
+			waitCo: waitCo
 		}, function (inc, err) {
 			res.writeHead(200, {'Content-Type': 'application/json'});
 			if (err) {
@@ -55,10 +62,10 @@ http.createServer(function (req, res) {
 				}));
 				return;
 			}
-			var data = inc.getData();
+			var data = inc ? inc.getData() : '';
 			nodeLog('[info] Finish');
 			
-			res.end(JSON.stringify(data));
+			res.end(data && JSON.stringify(data));
 		});
 	} else {
 		res.end('server is running but without build data.');

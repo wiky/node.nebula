@@ -5,7 +5,7 @@
   },
   "name": "node.nebula",
   "description": "",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "main": "./index.js",
   "dependencies": {},
   "devDependencies": {},
@@ -13,7 +13,7 @@
   "engines": {
     "node": "*"
   },
-  "_id": "node.nebula@0.0.25",
+  "_id": "node.nebula@0.0.27",
   "_engineSupported": true,
   "_npmVersion": "1.1.21",
   "_nodeVersion": "v0.6.18",
@@ -21,7 +21,7 @@
   "dist": {
     "shasum": "7dd5d72c9c319153571508070b41f12f29ea3480"
   },
-  "_from": "node.nebula@0.0.22",
+  "_from": "node.nebula@0.0.27",
   "_npmUser": {
     "name": "xunuo",
     "email": "i@xunuo.com"
