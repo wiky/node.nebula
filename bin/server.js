@@ -33,7 +33,13 @@ var config = {
 	 * 等待svn co 代码
 	 * @type {Boolean}
 	 */
-	waitCo: false
+	waitCo: false,
+	/**
+	 * 自动移除svn代码
+	 * 完成扫描后
+	 * @type {Boolean}
+	 */
+	autoDelete: true
 };
 
 this.onRunning = {};
@@ -42,11 +48,12 @@ this.onRunning = {};
  * 创建服务
  */
 http.createServer(function (req, res) {
-	var query = nodeParse(req.url, true).query || null,
-		name = query && query.name,
-		url = (query && query.url) || config.url,
-		bak = (query && query.bak) === 'true' || config.backupData;
-		waitCo = (query && query.waitCo) === 'true' || config.waitCo;
+	var query = nodeParse(req.url, true).query || {},
+		name = query.name,
+		url = query.url || config.url,
+		bak = query.bak === 'true' || config.backupData,
+		waitCo = query.waitCo === 'true' || config.waitCo,
+		autoDelete = query.autoDelete ? query.autoDelete !== 'false' : config.autoDelete;
 
 	if (name && url) {
 		nodeLog('[info] Start build, URL:' + url);

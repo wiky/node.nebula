@@ -5,7 +5,7 @@
   },
   "name": "node.nebula",
   "description": "",
-  "version": "0.0.28",
+  "version": "0.0.32",
   "main": "./index.js",
   "dependencies": {},
   "devDependencies": {},
