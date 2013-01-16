@@ -28,7 +28,7 @@ var config = {
 	 * 同时在server端备份数据
 	 * @type {Boolean}
 	 */
-	backupData: false,
+	backupData: true,
 	/**
 	 * 等待svn co 代码
 	 * @type {Boolean}
@@ -51,7 +51,7 @@ http.createServer(function (req, res) {
 	var query = nodeParse(req.url, true).query || {},
 		name = query.name,
 		url = query.url || config.url,
-		bak = query.bak === 'true' || config.backupData,
+		bak = query.bak ? query.bak !== 'false' : config.backupData,
 		waitCo = query.waitCo === 'true' || config.waitCo,
 		autoDelete = query.autoDelete ? query.autoDelete !== 'false' : config.autoDelete;
 
@@ -62,7 +62,8 @@ http.createServer(function (req, res) {
 			branchName: name,
 			svnDir: config.svnDir + util.urlToDir(url),
 			backupData: bak,
-			waitCo: waitCo
+			waitCo: waitCo,
+			autoDelete: autoDelete
 		}, function (inc, err) {
 			res.writeHead(200, {'Content-Type': 'application/json'});
 			if (err) {
