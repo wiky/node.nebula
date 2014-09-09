@@ -14,7 +14,7 @@ var config = {
 	 * 服务地址
 	 * @type {String}
 	 */
-	host: '10.20.157.43',
+	host: '**.20.157.43',
 	/**
 	 * 建立的svn文件夹地址
 	 * @type {String}
@@ -23,7 +23,7 @@ var config = {
 	/**
 	 * 默认的svn地址
 	 */
-	url: 'http://svn.alibaba-inc.com/repos/ali_intl_share/intl-style/branches/',
+	url: 'http://.../intl-style/branches/',
 	/**
 	 * 同时在server端备份数据
 	 * @type {Boolean}
