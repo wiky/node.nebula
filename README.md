@@ -16,7 +16,7 @@ When server is running, you can use `url` and `name` parameter to require data.
 
 for example:
 
-	http://10.20.157.43:2077/build?url=http://svn.alibaba-inc.com/repos/ali_intl_share/intl-style/branches&name=20120814_165927_1
+	http://10.20.157.43:2077/build?url=http://.../intl-style/branches&name=20120814_165927_1
 	
 ##Run as a Scanner
 
